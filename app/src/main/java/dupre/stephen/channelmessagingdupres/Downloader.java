@@ -95,7 +95,7 @@ public class Downloader extends AsyncTask<Void,Integer,String> {
                 String line;
                 BufferedReader br =new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 while ((line=br.readLine()) != null) {
-                    response+=line;
+                    response=response+line;
                 }
             }
             else

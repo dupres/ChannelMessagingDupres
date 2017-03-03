@@ -23,12 +23,12 @@ public class ChannelListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_channel_list);
+        setContentView(R.layout.activity_channel_list);
 
         channels = (ListView) findViewById(R.id.listViewChannels);
         btnFriends = (Button) findViewById(R.id.buttonFriends);
 
-        SharedPreferences settings = getSharedPreferences(LoginActivity.PREFS_NAME, 0);
+        SharedPreferences settings = getSharedPreferences(Login_Activity.PREFS_NAME, 0);
         String accesstoken = settings.getString("accesstoken","");
 
         HashMap<String, String> params = new HashMap<String, String>();

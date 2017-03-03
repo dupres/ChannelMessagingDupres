@@ -18,7 +18,7 @@ import java.util.List;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_activity_friends);
+            setContentView(R.layout.activity_friends);
 
 
             friends = (GridView) findViewById(R.id.gridViewFriends);

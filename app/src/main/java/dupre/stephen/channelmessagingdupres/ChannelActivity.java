@@ -32,7 +32,7 @@ public class ChannelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_channel);
+        setContentView(R.layout.activity_channel);
 
         messages = (ListView) findViewById(R.id.listViewMessages);
         myMessage = (EditText) findViewById(R.id.editTextMessage);
@@ -42,7 +42,7 @@ public class ChannelActivity extends AppCompatActivity {
 
         final Runnable r = new Runnable() {
             public void run() {
-                SharedPreferences settings = getSharedPreferences(LoginActivity.PREFS_NAME, 0);
+                SharedPreferences settings = getSharedPreferences(Login_Activity.PREFS_NAME, 0);
                 String accesstoken = settings.getString("accesstoken","");
 
                 HashMap<String, String> params = new HashMap<String, String>();
@@ -70,7 +70,7 @@ public class ChannelActivity extends AppCompatActivity {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences settings = getSharedPreferences(LoginActivity.PREFS_NAME, 0);
+                SharedPreferences settings = getSharedPreferences(Login_Activity.PREFS_NAME, 0);
                 String accesstoken = settings.getString("accesstoken","");
 
                 HashMap<String, String> params = new HashMap<String, String>();
@@ -101,7 +101,7 @@ public class ChannelActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final Message message = (Message) messages.getItemAtPosition(position);
 
-                SharedPreferences settings = getSharedPreferences(LoginActivity.PREFS_NAME, 0);
+                SharedPreferences settings = getSharedPreferences(Login_Activity.PREFS_NAME, 0);
                 String username = settings.getString("username","");
 
                 if(!message.getUsername().equals(username)){

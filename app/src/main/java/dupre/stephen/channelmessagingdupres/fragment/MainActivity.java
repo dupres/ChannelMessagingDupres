@@ -1,16 +1,15 @@
-package dupre.stephen.channelmessagingdupres;
+package dupre.stephen.channelmessagingdupres.fragment;
 
-/**
- * Created by dupres on 06/02/2017.
- */
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -22,8 +21,23 @@ import com.google.gson.Gson;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
-public class ChannelActivity extends AppCompatActivity {
+import dupre.stephen.channelmessagingdupres.Channel;
+import dupre.stephen.channelmessagingdupres.ChannelActivity;
+import dupre.stephen.channelmessagingdupres.ConnectionReturn;
+import dupre.stephen.channelmessagingdupres.Downloader;
+import dupre.stephen.channelmessagingdupres.Message;
+import dupre.stephen.channelmessagingdupres.MessageContainer;
+import dupre.stephen.channelmessagingdupres.MessageListAdapter;
+import dupre.stephen.channelmessagingdupres.OnDownloadCompleteListener;
+import dupre.stephen.channelmessagingdupres.R;
+import dupre.stephen.channelmessagingdupres.UserDataSource;
+import dupre.stephen.channelmessagingdupres.fragment.ListFragment;
+import dupre.stephen.channelmessagingdupres.fragment.MessageFragment;
+import dupre.stephen.channelmessagingdupres.login_Activity;
+
+public class MainActivity extends AppCompatActivity {
     private ListView messages;
     private EditText myMessage;
     private Button btnSend;
@@ -105,7 +119,7 @@ public class ChannelActivity extends AppCompatActivity {
                 String username = settings.getString("username","");
 
                 if(!message.getUsername().equals(username)){
-                    AlertDialog.Builder builder = new AlertDialog.Builder(ChannelActivity.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                     builder.setTitle("Ajouter un ami");
                     builder.setMessage("Voulez-vous vraiment ajouter cet utilisateur à votre liste d'amis ?")
                             .setPositiveButton("Oui", new DialogInterface.OnClickListener() {

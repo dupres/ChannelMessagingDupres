@@ -1,9 +1,10 @@
-package dupre.stephen.channelmessagingdupres;
+package dupre.stephen.channelmessagingdupres.fragment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -13,17 +14,24 @@ import com.google.gson.Gson;
 
 import java.util.HashMap;
 
-/**
- * Created by dupres on 06/02/2017.
- */
-public class ChannelListActivity extends AppCompatActivity {
+import dupre.stephen.channelmessagingdupres.Channel;
+import dupre.stephen.channelmessagingdupres.ChannelActivity;
+import dupre.stephen.channelmessagingdupres.ChannelArrayAdapter;
+import dupre.stephen.channelmessagingdupres.ChannelsContainer;
+import dupre.stephen.channelmessagingdupres.Downloader;
+import dupre.stephen.channelmessagingdupres.FriendsActivity;
+import dupre.stephen.channelmessagingdupres.OnDownloadCompleteListener;
+import dupre.stephen.channelmessagingdupres.R;
+import dupre.stephen.channelmessagingdupres.login_Activity;
+
+public class ListFragment extends AppCompatActivity {
     private ListView channels;
     private Button btnFriends;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_channel_list);
+        setContentView(R.layout.activity_fragment_list);
 
         channels = (ListView) findViewById(R.id.listViewChannels);
         btnFriends = (Button) findViewById(R.id.buttonFriends);
@@ -51,7 +59,7 @@ public class ChannelListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Channel channel = (Channel) channels.getItemAtPosition(position);
-                Intent intent = new Intent(getApplicationContext(), ChannelActivity.class);
+                Intent intent = new Intent(getApplicationContext(), FragmentActivity.class);
                 intent.putExtra("channelid", Integer.toString(channel.getChannelID()));
                 startActivity(intent);
             }

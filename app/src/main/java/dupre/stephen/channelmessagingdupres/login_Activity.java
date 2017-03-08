@@ -16,7 +16,7 @@ import java.util.HashMap;
 /**
  * Created by dupres on 06/02/2017.
  */
-public class Login_Activity extends AppCompatActivity implements OnDownloadCompleteListener, View.OnClickListener{
+public class login_Activity extends AppCompatActivity implements OnDownloadCompleteListener, View.OnClickListener{
 
     private EditText identifiant;
     private EditText password;

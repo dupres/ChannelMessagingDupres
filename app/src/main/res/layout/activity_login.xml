@@ -7,26 +7,50 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="dupre.stephen.channelmessagingdupres.Login_Activity"
+    tools:context="dupre.stephen.channelmessagingdupres.login_Activity"
     android:orientation="vertical">
 
     <ImageView
         android:layout_width="250dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewLogoWhite"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/channel_messaging_logo"/>
+        android:src="@drawable/channel_messaging_logo"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/identifiant"
         android:id="@+id/textView"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageViewLogoWhite"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="45dp"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Identifiant"
+        android:inputType="text"
+        android:text="sdupr"
+        android:layout_alignTop="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mot_de_passe"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -37,26 +61,9 @@
         android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/buttonValider"
         android:layout_alignStart="@+id/buttonValider"
-        android:layout_marginTop="41dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mot_de_passe"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="161dp" />
-
-    <EditText
-        android:layout_width="154dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/Identifiant"
-        android:inputType="text"
-        android:text="sdupr"
-        android:layout_alignTop="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="0dp"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center" />
 
     <Button
         android:layout_width="wrap_content"
@@ -67,9 +74,16 @@
         android:nestedScrollingEnabled="true"
         android:onClick="onClick"
         android:theme="@style/home"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/Password"
         android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewQuote"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

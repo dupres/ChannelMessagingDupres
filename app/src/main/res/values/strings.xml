@@ -3,4 +3,9 @@
     <string name="identifiant">Identifiant</string>
     <string name="mot_de_passe">Mot de passe</string>
     <string name="se_connecter">Se connecter</string>
+    <string name="quote1">Quote 1</string>
+    <string name="quote2">Quote 2</string>
+    <string name="quote3">Quote 3</string>
+    <string name="quote4">Quote 4</string>
+    <string name="quote5">Quote 5</string>
 </resources>

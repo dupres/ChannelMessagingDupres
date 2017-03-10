@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "dupre.stephen.channelmessagingdupres"
-        minSdkVersion 13
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -27,4 +27,7 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     // Support lib for material design
     compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support:support-compat:25.1.1'
+    compile 'com.daimajia.easing:library:2.0@aar'
+    compile 'com.daimajia.androidanimations:library:2.2@aar'
 }

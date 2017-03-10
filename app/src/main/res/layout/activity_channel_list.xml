@@ -9,19 +9,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="dupre.stephen.channelmessagingdupres.ChannelListActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:id="@+id/imageViewLogoBlack"
+        android:src="@drawable/channel_messaging_logo_black" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Amis"
         android:id="@+id/buttonFriends"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/imageViewLogoBlack"
         android:layout_centerHorizontal="true" />
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listViewChannels"
-        android:layout_below="@+id/buttonFriends"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/buttonFriends" />
 </RelativeLayout>

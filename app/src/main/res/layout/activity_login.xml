@@ -8,11 +8,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="dupre.stephen.channelmessagingdupres.login_Activity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:id="@+id/linearLayout_id">
 
     <ImageView
-        android:layout_width="250dp"
-        android:layout_height="100dp"
+        android:layout_width="517dp"
+        android:layout_height="114dp"
         android:id="@+id/imageViewLogoWhite"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -81,9 +83,12 @@
         android:layout_gravity="center_horizontal" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewQuote"
-        android:layout_gravity="center_horizontal" />
+        android:text="Chat with your friends !"
+        android:layout_weight="0.54"
+        android:textSize="20dp"
+        android:gravity="fill_vertical|center_horizontal" />
 
 </LinearLayout>

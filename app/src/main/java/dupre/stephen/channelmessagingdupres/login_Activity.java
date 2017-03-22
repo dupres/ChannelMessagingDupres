@@ -26,6 +26,8 @@ import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.google.gson.Gson;
 
 import java.util.HashMap;
+import java.util.Random;
+
 import android.os.Handler;
 
 /**
@@ -48,18 +50,20 @@ public class login_Activity extends AppCompatActivity implements OnDownloadCompl
         identifiant = (EditText) findViewById(R.id.Identifiant);
         password = (EditText) findViewById(R.id.Password);
         final TextView quote = (TextView) findViewById(R.id.textViewQuote);
-        final int[] quoteNb = {0};
-        final String[] quotes = new String[10];
-        quotes[0]="Chat with your friends !";
-        quotes[1]="Quote 1";
-        quotes[2]="Quote 2";
-        quotes[3]="Quote 3";
-        quotes[4]="Quote 4";
-        quotes[5]="Quote 5";
-        quotes[6]="Quote 6";
-        quotes[7]="Quote 7";
-        quotes[8]="Quote 8";
-        quotes[9]="Quote 9";
+        final int[] quoteNb = new int[2];
+        final String[] quotes = new String[11];
+        quotes[0]="Welcome !";
+        quotes[1]="Bienvenue !";
+        quotes[2]="Willkommen!";
+        quotes[3]="Bienvenido!";
+        quotes[4]="Benvenuto!";
+        quotes[5]="Yōkoso!";
+        quotes[6]="Bem-vindo!";
+        quotes[7]="Fáilte!";
+        quotes[8]="Dobro pozhalovat'!";
+        quotes[9]="Welkom!";
+        quotes[10]="Welina !";
+
 
 
 
@@ -82,17 +86,31 @@ public class login_Activity extends AppCompatActivity implements OnDownloadCompl
         final Handler mHandlerQuote2 = new Handler();
         final Integer mShortDelayQuote2 = 1000;
 
+        final boolean[] firstTime = {true};
+
         mHandlerQuote.postDelayed(new Runnable(){
             public void run(){
                 YoYo.with(Techniques.SlideOutLeft).playOn(quote);
 
                 mHandlerQuote2.postDelayed(new Runnable(){
                     public void run(){
-
-                        quoteNb[0] = quoteNb[0] +1;
-                        if (quoteNb[0] >9) {
-                            quoteNb[0]=0;
+                        if (firstTime[0]){
+                            quoteNb[0]=1;
+                            quoteNb[1]=1;
+                            firstTime[0] =false;
                         }
+                        else{
+                            final Random rand = new Random();
+                            quoteNb[1]=quoteNb[0];
+                            quoteNb[0]=rand.nextInt(quotes.length);
+                            if (quoteNb[0]==quoteNb[1]){
+                                quoteNb[0]=quoteNb[0]+1;
+                                if (quoteNb[0]>quotes.length){
+                                    quoteNb[0]=1;
+                                }
+                            }
+                        }
+
                         quote.setText(quotes[quoteNb[0]]);
                         YoYo.with(Techniques.SlideInRight).playOn(quote);
                     }

@@ -31,7 +31,7 @@ public class ListFragment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment_list);
+        setContentView(R.layout.fragment_list);
 
         channels = (ListView) findViewById(R.id.listViewChannels);
         btnFriends = (Button) findViewById(R.id.buttonFriends);

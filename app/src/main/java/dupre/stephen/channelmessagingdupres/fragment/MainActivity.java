@@ -37,7 +37,7 @@ import dupre.stephen.channelmessagingdupres.fragment.ListFragment;
 import dupre.stephen.channelmessagingdupres.fragment.MessageFragment;
 import dupre.stephen.channelmessagingdupres.login_Activity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ActionBarActivity {
     private ListView messages;
     private EditText myMessage;
     private Button btnSend;
@@ -143,6 +143,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
